@@ -179,11 +179,15 @@ class Stage {
     this._setCamera()
   }
   onRaf() {
+    // console.log("onRef")
+
+    // console.log(this.model)
     this._render()
+
     // const speed = 0.001;
     // if (!this.model) return;
     // this.model.rotation.x += speed;
-    // this.model.rotation.y += speed;
+    // this.model.rotation.y += speed
     // this.model.rotation.z += speed;
   }
 } // Stage
@@ -209,7 +213,7 @@ class Particle {
     this.wireOpacity = 0.1 // 0.02
     this.repeatCount = 0
     this.animated = false
-    this.animating = false
+    this.animating = true
     // this.animating = true;
     this.modelAnimating = false
     this.spheres = []
@@ -440,12 +444,14 @@ class Particle {
   _render() {}
   onResize() {}
   onRaf() {
-    const speed = 0.001
+    console.log(this.model)
+
+    const speed = 0.002
     if (!this.model) return
     if (this.animating) {
       this.model.rotation.y += speed
-      this.model.rotation.z += speed
-      this.model.rotation.x += speed
+      // this.model.rotation.z += speed
+      // this.model.rotation.x += speed
     }
 
     // if (this.mesh) {
